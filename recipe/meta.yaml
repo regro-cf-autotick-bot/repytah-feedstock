@@ -1,5 +1,5 @@
 {% set name = "repytah" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/repytah-{{ version }}.tar.gz
-  sha256: a4b7e1c1634d007572e4af036fde67cf6f098839664f79bbfebded2f9b2993be
+  sha256: 307be6aa832e8feb578a5dba4972a65b2ef74f80f7d773c2774f0af55ef44185
 
 build:
   noarch: python
