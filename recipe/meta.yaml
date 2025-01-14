@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/repytah-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/repytah-{{ version }}.tar.gz
   sha256: 6a64e5068b042b7217e7e9d502ede011c40a274f727083257ebcefd262a56c1a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7,<4.0
+    - python {{ python_min }}
     - setuptools >=61.0
     - pip
   run:
-    - python >=3.7,<4.0
+    - python >={{ python_min }},<4.0
     - numpy >=1.21.6
     - scipy >=1.7.3
     - pandas >=1.3.5
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/smith-tinkerlab/repytah
